@@ -31,7 +31,7 @@ public class Tetramino : MonoBehaviour
 
     public void RotateLeft()
     {
-
+        Vlad;
     }
 
     public void RotateRight()
