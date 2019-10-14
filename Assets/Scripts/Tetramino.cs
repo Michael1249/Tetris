@@ -97,9 +97,19 @@ public class Tetramino : MonoBehaviour
         // move down, check for colision and stuck
         // if stuck, reset
 
-        if (!controller.field.isTetraminoColide(getAbsolutePos()))
-            pos.y++;
-        else Reset();
+        if (controller.field.isTetraminoStuck(getAbsolutePos()))
+            Reset();
+        else pos.y++;
+    }
+
+    public void moveRight()
+    {
+        pos.x++;
+    }
+
+    public void moveLeft()
+    {
+        pos.x--;
     }
 
     public void RotateLeft()
