@@ -17,6 +17,14 @@ public class GameField : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (field == null)
+        {
+            InitField();
+        }
+    }
+
+    void InitField()
+    {
         field = new Cell[field_size.x, field_size.y];
 
         for (int i = 0; i < field_size.x; i++)
@@ -24,8 +32,10 @@ public class GameField : MonoBehaviour
             for (int j = 0; j < field_size.y; j++)
             {
                 field[i, j] = new Cell();
+                //field[i, j].state = ((i + j) % 2) == 0;
             }
         }
+        //controller.represent.UpdateRepresent();
     }
 
     // it'll call before tetramino move
