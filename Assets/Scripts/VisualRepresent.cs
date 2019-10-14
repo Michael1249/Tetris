@@ -13,11 +13,10 @@ public class VisualRepresent : MonoBehaviour
     }
 
     // it'll be called by GameLogic when field is updated
-    void UpdateRepresent()
+    public void UpdateRepresent()
     {
-        GameField gf = new GameField();
-        Cell[,] field = gf.getField();
-        Vector2Int field_size = gf.getFieldSize();
+        Cell[,] field = controller.field.getField();
+        Vector2Int field_size = controller.field.getFieldSize();
         foreach (GameObject o in Object.FindObjectsOfType<GameObject>())
         {
             if (o.name != "Main Camera")
