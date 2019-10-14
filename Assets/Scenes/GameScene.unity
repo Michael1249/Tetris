@@ -238,7 +238,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 846785115}
-  field_size: {x: 0, y: 0}
+  field_size: {x: 6, y: 6}
 --- !u!114 &846785112
 MonoBehaviour:
   m_ObjectHideFlags: 0
