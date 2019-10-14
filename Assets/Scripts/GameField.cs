@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -32,10 +32,12 @@ public class GameField : MonoBehaviour
             for (int j = 0; j < field_size.y; j++)
             {
                 field[i, j] = new Cell();
-                //field[i, j].state = ((i + j) % 2) == 0;
+                field[i, j].state = ((i + j) % 2) == 0;
+               
+        field[i, j].color = Color.red;
             }
         }
-        //controller.represent.UpdateRepresent();
+        controller.represent.UpdateRepresent();
     }
 
     // it'll call before tetramino move
