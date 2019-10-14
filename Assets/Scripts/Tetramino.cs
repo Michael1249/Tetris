@@ -107,7 +107,7 @@ public class Tetramino : MonoBehaviour
         int angle = (int)(-90 * Math.PI / 180);
         for (int i = 0; i < parts.Length; i++)
         {
-            double x0 = maxXPart()/2, y0 = maxYPart() / 2;
+            double x0 = maxXPart()/2 + 1, y0 = maxYPart() / 2 + 1;
 
             parts[i].x = Decimal.ToInt32(Math.Floor(Convert.ToDecimal(x0 + (parts[i].x - x0) * Math.Cos(angle) - (parts[i].y - y0) * Math.Sin(angle))));
             parts[i].y = Decimal.ToInt32(Math.Floor(Convert.ToDecimal(y0 + (parts[i].x - x0) * Math.Sin(angle) + (parts[i].y - y0) * Math.Cos(angle))));
@@ -119,7 +119,7 @@ public class Tetramino : MonoBehaviour
         int angle = (int)(90 * Math.PI / 180);
         for (int i = 0; i < parts.Length; i++)
         {
-            double x0 = maxXPart()/2, y0 = maxYPart() / 2;
+            double x0 = maxXPart()/2 + 1, y0 = maxYPart() / 2 + 1;
 
             parts[i].x = Decimal.ToInt32(Math.Floor(Convert.ToDecimal(x0 + (parts[i].x - x0) * Math.Cos(angle) - (parts[i].y - y0) * Math.Sin(angle))));
             parts[i].y = Decimal.ToInt32(Math.Floor(Convert.ToDecimal(y0 + (parts[i].x - x0) * Math.Sin(angle) + (parts[i].y - y0) * Math.Cos(angle))));
