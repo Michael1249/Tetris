@@ -34,7 +34,7 @@ public class GameField : MonoBehaviour
                 field[i, j] = new Cell();
                 field[i, j].state = ((i + j) % 2) == 0;
                
-        field[i, j].color = Color.red;
+        field[i, j].color = Color.red; // for example
             }
         }
         controller.represent.UpdateRepresent();
