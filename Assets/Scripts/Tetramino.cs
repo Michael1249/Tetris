@@ -11,9 +11,8 @@ public class Tetramino : MonoBehaviour
     private Color color;
     private Vector2Int pos;
     private Vector2Int[] parts;
-    private Vector2Int[] absolutePos;
 
-    private Vector2Int[,] tetramino;
+    private Vector2Int[,] tetramino = new Vector2Int[7, 4];
 
     Vector2Int fieldSize;
 
@@ -84,6 +83,7 @@ public class Tetramino : MonoBehaviour
 
     private Vector2Int[] getAbsolutePos()
     {
+        Vector2Int[] absolutePos = new Vector2Int[4];
         for (int i = 0; i < 4; i++)
         {
             absolutePos[i] = new Vector2Int(pos.x + parts[i].x, pos.y + parts[i].y);
@@ -99,17 +99,26 @@ public class Tetramino : MonoBehaviour
 
         if (controller.field.isTetraminoStuck(getAbsolutePos()))
             Reset();
-        else pos.y++;
+        else
+        {
+            controller.field.clearCells(getAbsolutePos());
+            pos.y++;
+            controller.field.addCells(getAbsolutePos());
+        }
     }
 
     public void moveRight()
     {
+        controller.field.clearCells(getAbsolutePos());
         pos.x++;
+        controller.field.addCells(getAbsolutePos());
     }
 
     public void moveLeft()
     {
+        controller.field.clearCells(getAbsolutePos());
         pos.x--;
+        controller.field.addCells(getAbsolutePos());
     }
 
     public void RotateLeft()
