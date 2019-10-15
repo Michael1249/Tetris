@@ -10,7 +10,7 @@ public class Tetramino : MonoBehaviour
 
     private Color color;
     private Vector2Int pos;
-    private Vector2Int[] parts;
+    private Vector2Int[] parts = new Vector2Int[4];
 
     private Vector2Int[,] tetramino = new Vector2Int[7, 4];
 
@@ -79,6 +79,7 @@ public class Tetramino : MonoBehaviour
     {
         setParts(UnityEngine.Random.Range(0, 7));
         pos = new Vector2Int(fieldSize.x / 2, 0);
+        controller.field.addCells(getAbsolutePos());
     }
 
     private Vector2Int[] getAbsolutePos()
