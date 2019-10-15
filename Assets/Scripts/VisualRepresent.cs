@@ -19,7 +19,7 @@ public class VisualRepresent : MonoBehaviour
         Vector2Int field_size = controller.field.getFieldSize();
         foreach (GameObject o in Object.FindObjectsOfType<GameObject>())
         {
-            if (o.name == "Temp object")
+            if (o.name != "Main Camera")
                 Destroy(o);
         }        
         int x = -field_size.x, y = -field_size.y;        
@@ -43,7 +43,6 @@ public class VisualRepresent : MonoBehaviour
     void DrawPolygon2D(Vector2[] vertices, ushort[] triangles, Color color)
     {
         GameObject polygon = new GameObject(); //create a new game object
-        polygon.name = "Temp object";
         SpriteRenderer sr = polygon.AddComponent<SpriteRenderer>(); // add a sprite renderer
         Texture2D texture = new Texture2D(3, 3); // create a texture larger than your maximum polygon size
 
