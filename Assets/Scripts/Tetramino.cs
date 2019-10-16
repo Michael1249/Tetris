@@ -110,16 +110,22 @@ public class Tetramino : MonoBehaviour
 
     public void moveRight()
     {
-        controller.field.clearCells(getAbsolutePos());
-        pos.x++;
-        controller.field.addCells(getAbsolutePos());
+        if(!controller.field.isTetraminoColide(getAbsolutePos()))
+        {
+            controller.field.clearCells(getAbsolutePos());
+            pos.x++;
+            controller.field.addCells(getAbsolutePos());
+        }
     }
 
     public void moveLeft()
     {
-        controller.field.clearCells(getAbsolutePos());
-        pos.x--;
-        controller.field.addCells(getAbsolutePos());
+        if(!controller.field.isTetraminoColide(getAbsolutePos()))
+        {
+            controller.field.clearCells(getAbsolutePos());
+            pos.x--;
+            controller.field.addCells(getAbsolutePos());
+        }
     }
 
     public void RotateLeft()
